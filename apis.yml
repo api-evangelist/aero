@@ -1,10 +1,19 @@
 aid: aero
 name: Aero
-description: 'Aero is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Aero Technologies, Inc. is a Van Nuys, California semi-private airline
+  founded in 2019 by Uber co-founder Garrett Camp, selling individual seats on scheduled
+  flights and on-demand charters operated exclusively from private terminals. Its fleet
+  comprises Embraer ERJ135 and Legacy 600 jets plus Gulfstream IV-SP aircraft, flying
+  Los Angeles to New York City, Aspen, Sun Valley, Napa Valley, Los Cabos, Las Vegas,
+  Maui, Miami, Heber and Greater Palm Springs. Aero distributes through aero.com, its
+  mobile app, a travel-advisor channel, and Sabre GDS under airline designator 5E with
+  plating carrier 307. It is a consumer travel brand: no public developer API, developer
+  portal, SDK, webhook surface or machine-readable specification is published.'
 url: https://raw.githubusercontent.com/api-evangelist/aero/refs/heads/main/apis.yml
+image: https://aero.com/_next/static/images/social-e232bb93c09bb5dc467b8481214a3c30.jpg
 x-type: company
 x-source: harvest:secondary-market
+x-secondary-market-listing: https://forgeglobal.com/aero_stock/
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,12 +21,55 @@ created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Travel
+- Air Travel
+- Airlines
+- Private Aviation
+- Transportation
+- Booking
+- Consumer
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Aero is a consumer semi-private airline whose only machine-readable distribution
+    channel is Sabre GDS under airline designator 5E / plating carrier 307 — a
+    third-party channel, not an API it publishes; aero.com is a Next.js SPA that
+    answers 200 with the homepage for every unknown path (including /openapi.json
+    and every /.well-known/* probe), robots.txt disallows its internal /api/*
+    routes, and api./developer./docs.aero.com are wildcard DNS with no valid
+    certificate.
+  evidence:
+  - url: https://aero.com/openapi.json
+    status: 200
+  - url: https://aero.com/thisdoesnotexist-control-12345
+    status: 200
+  - url: https://aero.com/.well-known/agent-card.json
+    status: 200
+  - url: https://aero.com/robots.txt
+    status: 200
+  - url: https://aero.com/gds-ticketing-guide
+    status: 200
+  checked: '2026-08-06'
 common:
+- type: DomainSecurity
+  url: security/aero-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/aero_stock/
+  url: https://aero.com/
+- type: Support
+  url: https://aero.com/contact-us
+- type: TermsOfService
+  url: https://aero.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://aero.com/privacy-policy

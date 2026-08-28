@@ -10,6 +10,17 @@ description: 'Aero Technologies, Inc. is a Van Nuys, California semi-private air
   plating carrier 307. It is a consumer travel brand: no public developer API, developer
   portal, SDK, webhook surface or machine-readable specification is published.'
 url: https://raw.githubusercontent.com/api-evangelist/aero/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://aero.com/_next/static/images/social-e232bb93c09bb5dc467b8481214a3c30.jpg
 x-type: company
 x-source: harvest:secondary-market

@@ -1,0 +1,62 @@
+# Aero
+
+> Aero (Aero Technologies, Inc.) is a semi-private airline that sells individual seats on
+> business-jet aircraft departing from private terminals, sitting between first-class commercial
+> airfare and full private charter. Founded 2019, CEO Uma Subramanian, operating from Los Angeles
+> (Van Nuys) with scheduled routes to Aspen, Los Cabos, Maui, Miami, New York and White Plains,
+> plus on-demand private charter and group travel.
+
+## API status
+
+Aero publishes **no public API**. As of 2026-09-10 there is no developer portal, no API reference,
+no OpenAPI/GraphQL/AsyncAPI contract, no SDK, no MCP server and no A2A agent card on any host this
+profile knows (aero.com, www.aero.com, help.aero.com, aeroblack.aero.com, your.aero.com). Every
+`/.well-known/` path, `/openapi.json`, `/swagger.json`, `/graphql`, `/api-docs` and `/llms.txt`
+probe missed. Note that aero.com serves a **soft 404**: its Next.js catch-all answers HTTP 200
+with the full marketing homepage for any unknown path, so a 200 from that host is not evidence a
+document exists — compare the body against `https://aero.com/` before trusting it.
+
+The booking application calls same-origin `/api/*` endpoints, which `https://aero.com/robots.txt`
+explicitly disallows (`Disallow: /api/*`). Those are internal, undocumented, and not an offered
+integration surface.
+
+## Programmatic distribution
+
+Aero's machine-bookable surface is **Sabre GDS**, not a first-party API. Aero flights are shoppable,
+bookable and ticketable under **airline code 5E** through a standard GDS agency workflow; routes not
+yet in Sabre are booked through a dedicated Direct Booking URL issued to the agency. Integration
+therefore runs through Sabre's contracts and an Aero travel-advisor agreement, not through anything
+Aero publishes.
+
+- Travel Advisor partnerships and the route/GDS matrix: https://aero.com/travel-advisors
+- Travel Advisor sales + booking guide (GDS and direct): https://aero.com/gds-ticketing-guide
+- GDS support contact: gds@aero.com
+- Travel advisor support contact: traveladvisors@aero.com
+
+## Company
+
+- Home: https://aero.com/
+- Our Story: https://aero.com/our-story
+- The Experience: https://aero.com/the-experience
+- Fleet: https://aero.com/fleet
+- Where We Fly: https://aero.com/where-we-fly
+- Private Charter: https://aero.com/private-charter
+- Group Travel: https://aero.com/group-travel
+- Safety Standards: https://aero.com/safety
+- Contact / 24-7 Concierge: https://aero.com/contact-us
+- Help Centre (Zendesk): https://help.aero.com
+- Careers: https://aero.com/joinaero
+- GitHub organisation (22 repos, all forks of third-party tooling): https://github.com/goaero
+
+## Legal
+
+- Terms of Use: https://aero.com/terms-of-use
+- Privacy Policy: https://aero.com/privacy-policy
+- Conditions of Carriage (USA): https://aero.com/usa-conditions-of-carriage
+- Operator Participant Agreement: https://aero.com/opa
+
+## Provenance
+
+Generated 2026-09-10 by the API Evangelist enrichment pipeline from apis.yml and live probes of
+Aero's public surface. Nothing here was obtained with credentials. This is a third-party profile;
+API Evangelist does not operate Aero's systems.

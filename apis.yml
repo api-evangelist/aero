@@ -86,6 +86,20 @@ x-coverage:
     status: 200
   checked: '2026-08-06'
 common:
+- type: About
+  url: https://aero.com/our-story
+- type: HelpCenter
+  url: https://help.aero.com
+- type: GitHubOrganization
+  url: https://github.com/goaero
+- type: Careers
+  url: https://aero.com/joinaero
+- type: x-secondary-market-listing
+  url: https://equityzen.com/company/aero11d2
+- type: LLMsTxt
+  url: llms/aero-llms.txt
+- type: x-gds-distribution
+  url: https://aero.com/travel-advisors
 - type: DomainSecurity
   url: security/aero-domain-security.yml
 - type: Website
